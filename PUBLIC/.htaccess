@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /AuraTerra/
+
+RewriteRule ^$ public/ [L,R=302]
+RewriteRule ^public/ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ public/index.php [QSA,L]
